@@ -20,16 +20,16 @@ For the rows:
 - One row = one isolate/bacteria,
 
 And for the columns:
-- Column 1 = Farm = ID of the farm from which the isolate comes from
-- Column 2 = Visit = sampling time point (V1, V2 or V4 in our case)
-- Column 3 = Group = pre-withdrawal or post-withdrawal (respectively, received or did not receive zinc oxide in our case)
-- Column 4 = Sample = ID of the sample (e.g. W01, W02, etc. in our case)
-- Column 5 = Agar = to distinguish isolates collected on Unselective or Selective agar
-- Column 6 = Pick = individual number of the isolate within each sample (e.g. P1, P2, etc in our case)
+- Column 1 = Farm = identifier of the farm from which the isolate comes from,
+- Column 2 = Visit = sampling time point (V1, V2 or V4 in our case),
+- Column 3 = Group = pre-withdrawal or post-withdrawal (respectively, received or did not receive ZnO in our case),
+- Column 4 = Sample = identifier of the sample within each sampling time point (e.g. W01, W02, etc. in our case),
+- Column 5 = Agar = to distinguish isolates collected on Unselective or Selective agar,
+- Column 6 = Pick = individual number of the isolate within each sample (e.g. P1, P2, etc in our case),
 
 - Columns 7 to 20 = AST values (inhibition zone diameter in millimeters), one column per antibiotic
 
-Note: in the scripts, the antibiotics are in the following order: Tetracycline (TET), Ampicillin (AMP), Amoxicillin_Clavulanate (AMC), Apramycin (APR), Gentamicin (GEN), Streptomycin (STR), Spectinomycin (SPE), Sulfamethoxazole_Trimethoprim (SUT), Florfenicol (FLO), Chloramphenicol (CHL), Ceftiofur (CFT), Cefotaxime (CTX), Enrofloxacin (ENR), Ciprofloxacin (CIP)
+Note: in the scripts, the antibiotics are in the following order (unless otherwise specified): Tetracycline (TET), Ampicillin (AMP), Amoxicillin_Clavulanate (AMC), Apramycin (APR), Gentamicin (GEN), Streptomycin (STR), Spectinomycin (SPE), Sulfamethoxazole_Trimethoprim (SUT), Florfenicol (FLO), Chloramphenicol (CHL), Ceftiofur (CFT), Cefotaxime (CTX), Enrofloxacin (ENR), Ciprofloxacin (CIP)
 
 - Columns 21 to 23 = results of toxins PCR analysis (Yes if toxin detected by PCR, No otherwise) (e.g. STa, LTa, Stx2e)
 - Columns 24 to 29 = results of fimbriae PCR analysis (Yes if fimbriae detected by PCR, No otherwise) (e.g. F5, F41, F4, F6, F18, and F17)
