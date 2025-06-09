@@ -20,7 +20,6 @@ For the rows:
 - One row = one isolate/bacteria,
 
 And for the columns:
-- Columns 1 to 6 = isolate/bacteria identifier
 - Column 1 = Farm = ID of the farm from which the isolate comes from
 - Column 2 = Visit = sampling time point (V1, V2 or V4 in our case)
 - Column 3 = Group = pre-withdrawal or post-withdrawal (respectively, received or did not receive zinc oxide in our case)
