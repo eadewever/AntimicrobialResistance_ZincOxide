@@ -7,11 +7,11 @@
 
 
 ## Scripts (Rstudio)
-01_AST_CombinedHistogramsATB.R
-2_AST_Pheatmap4
-3_AST_R%ComparisonPerVisit
-4_AST_MDRComparisonPerVisit_PatternsAsso
-5_Fimbriae analysis
-6_Additional_picks_heatmaps
+- <code>1_AST_CombinedHistogramsATB.R</code>: displaying the distribution of the isolates based on their Antimicrobial Susceptibility values (i.e. zone diameter in millimeters)
+- <code>2_AST_Pheatmap4</code>: displaying the phenotypic resistance profiles of the isolates using heatmaps
+- <code>3_AST_R%ComparisonPerVisit</code>: comparing the resistance profiles in the pre- vs post-withdrawal groups
+- <code>4_AST_MDRComparisonPerVisit_PatternsAsso</code>: comparing multi-drug resistance prevalence in the pre- vs post-withdrawal groups
+- <code> 5_Fimbriae analysis</code>: comparing the fimbriae expressed in the pre- vs post-withdrawal groups
+- <code>6_Additional_picks_heatmaps</code>: displaying the phenotypic resistance profiles of the isolates using heatmaps (additional isolates not considered in the main analysis)
 
 ## Acknowledgments
