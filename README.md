@@ -21,7 +21,7 @@ For the rows:
 
 And for the columns:
 
-_E. coli_ isolates were isolated from weaner piglets faecal samples, and were distinguised by farm of origin, sampling time point, ZnO exposure, individual sample identifier within the sampling time point, agar type (i.e. isolated from selective or unselective agar), and individual isolate number within the sample.
+_E. coli_ isolates were obtained from weaner piglets faecal samples, and were distinguised by farm of origin, sampling time point, ZnO exposure, individual sample identifier within the sampling time point, agar type (i.e. isolated from selective or unselective agar), and individual isolate number within the sample (as multiple isolates were collected from each sample).
 - Column 1 = Farm = identifier of the farm from which the isolate comes from,
 - Column 2 = Visit = sampling time point (V1, V2 or V4 in our case),
 - Column 3 = Group = pre-withdrawal or post-withdrawal (respectively, received or did not receive ZnO in our case),
@@ -51,6 +51,6 @@ Note: in the scripts, the antibiotics are in the following order (unless otherwi
 
 [2] Li X, Rensing C, Vestergaard G, Arumugam M, Nesme J, Gupta S, Brejnrod AD, Sørensen SJ. 2022. Metagenomic evidence for co-occurrence of antibiotic, biocide and metal resistance genes in pigs. Environ Int. doi: 10.1016/j.envint.2021.106899.
 
-[3] “In Brief: Studying the Impact of the zinc oxide ban”. Veterinary Record 195 (1), p12, 6/13 July 2024; doi.org/10.1002/vetr.4446
+[3] “In Brief: Studying the Impact of the zinc oxide ban”. Veterinary Record 195 (1), p12, 6/13 July 2024; doi.org/10.1002/vetr.4446.
 
-[4] EMA 2017, EMA-Zinc oxide-Annex II, EMEA: Amsterdam, The Netherlands
+[4] EMA 2017, EMA-Zinc oxide-Annex II, EMEA: Amsterdam, The Netherlands.
