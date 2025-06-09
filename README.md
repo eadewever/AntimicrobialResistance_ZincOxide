@@ -1,10 +1,21 @@
-# Analysing the impact of the withdrawal of Zinc Oxide from weaner piglets diet on antimicrobial resistance in _Escherichia coli_
+# Assessing the impact of the withdrawal of Zinc Oxide from weaner piglets' diet on antimicrobial resistance in _Escherichia coli_
 
 
 <a href="https://doi.org/10.5281/zenodo.15625229"><img src="https://zenodo.org/badge/998958166.svg" alt="DOI"></a>
 
+
 ## Abstract
-This project aimed at 
+Antimicrobial resistance (AMR) is a global concern for both human and animal health. Antimicrobial consumption is particularly high in intensive livestock systems, especially in the pig sector [1]. In the UK, efforts to reduce antimicrobial use include stewardship practices, assurance schemes, and regulatory measures.
+AMR arises not only from the use of antimicrobials but also from exposure to heavy metals such as zinc and copper, as well as biocides, which can co-select for resistance through shared cellular mechanisms [2]. Resistance may also be acquired via direct genetic linkage between resistance genes carried on mobile genetic elements.
+
+This study was conducted as part of a broader, multidisciplinary project funded by the BBSRC, aiming to understand the impact of the UK ban on pharmaceutical zinc oxide (ZnO) supplementation in piglet feed on AMR levels and post-weaning diarrhoea (PWD) outcomes [3,4].
+
+The following scripts have been specifically developed to investigate the interplay between zinc oxide use in weaner piglets’ diets and the development of antimicrobial resistance in _Escherichia coli_. These scripts operate using Antimicrobial Susceptibility Testing (AST) data obtained through disc diffusion assays, to determine the phenotypic resistance profiles of _E. coli_ isolates.
+
+
+## Using the scripts
+he
+
 
 ## Scripts (Rstudio)
 - <code>1_AST_CombinedHistogramsATB.R</code>: displaying the distribution of the isolates based on their Antimicrobial Susceptibility values (i.e. zone diameter in millimeters)
@@ -14,7 +25,9 @@ This project aimed at
 - <code>5_Fimbriae analysis</code>: comparing the fimbriae expressed in the pre- vs post-withdrawal groups
 - <code>6_Additional_picks_heatmaps</code>: displaying the phenotypic resistance profiles of the isolates using heatmaps (additional isolates not considered in the main analysis)
 
-## Acknowledgments
-Funded by the BBSRC, ZINCLESS project team, Deborah HOYLE
-Master BioScience Sante ENS de Lyon
-Ecole Nationale Veterinaire de Lyon
+
+## References
+[1] Mulchandani R, Wang Y, Gilbert M, Van Boeckel TP. Global trends in antimicrobial use in food-producing animals: 2020 to 2030. PLOS Glob Public Health. 2023 Feb 1;3(2):e0001305. doi: 10.1371/journal.pgph.0001305.
+[2] Li X, Rensing C, Vestergaard G, Arumugam M, Nesme J, Gupta S, Brejnrod AD, Sørensen SJ. 2022. Metagenomic evidence for co-occurrence of antibiotic, biocide and metal resistance genes in pigs. Environ Int. doi: 10.1016/j.envint.2021.106899.
+[3] “In Brief: Studying the Impact of the zinc oxide ban”. Veterinary Record 195 (1), p12, 6/13 July 2024; doi.org/10.1002/vetr.4446
+[4] EMA 2017, EMA-Zinc oxide-Annex II, EMEA: Amsterdam, The Netherlands
