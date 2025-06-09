@@ -28,10 +28,11 @@ And for the columns:
 - Column 6 = Pick = individual number of the isolate within each sample (e.g. P1, P2, etc in our case)
 
 - Columns 7 to 20 = AST values (inhibition zone diameter in millimeters), one column per antibiotic
-Note: in the scripts, the antibiotics are in the following order: Tetracycline (TET), Ampicillin (AMP), Amoxicillin_Clavulanate (AMC), Apramycin (APR), Gentamicin (GEN), Streptomycin (STR), Spectinomycin (SPE), Sulfamethoxazole_Trimethoprim (SUT), Florfenicol (FLO), Chloramphenicol (CHL), Ceftiofur (CFT), Cefotaxime (CTX), Enrofloxacin (ENR), Ciprofloxacin (CIP).
+
+Note: in the scripts, the antibiotics are in the following order: Tetracycline (TET), Ampicillin (AMP), Amoxicillin_Clavulanate (AMC), Apramycin (APR), Gentamicin (GEN), Streptomycin (STR), Spectinomycin (SPE), Sulfamethoxazole_Trimethoprim (SUT), Florfenicol (FLO), Chloramphenicol (CHL), Ceftiofur (CFT), Cefotaxime (CTX), Enrofloxacin (ENR), Ciprofloxacin (CIP)
 
 - Columns 21 to 23 = results of toxins PCR analysis (Yes if toxin detected by PCR, No otherwise) (e.g. STa, LTa, Stx2e)
-- Columns 24 to 29 = results of fimbriae PCR analysis (Yes if fimbriae detected by PCR, No otherwise) (e.g. F4, F18, etc)
+- Columns 24 to 29 = results of fimbriae PCR analysis (Yes if fimbriae detected by PCR, No otherwise) (e.g. F5, F41, F4, F6, F18, and F17)
 
 
 ## Scripts (Rstudio)
