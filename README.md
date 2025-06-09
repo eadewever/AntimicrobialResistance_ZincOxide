@@ -28,6 +28,9 @@ he
 
 ## References
 [1] Mulchandani R, Wang Y, Gilbert M, Van Boeckel TP. Global trends in antimicrobial use in food-producing animals: 2020 to 2030. PLOS Glob Public Health. 2023 Feb 1;3(2):e0001305. doi: 10.1371/journal.pgph.0001305.
+
 [2] Li X, Rensing C, Vestergaard G, Arumugam M, Nesme J, Gupta S, Brejnrod AD, Sørensen SJ. 2022. Metagenomic evidence for co-occurrence of antibiotic, biocide and metal resistance genes in pigs. Environ Int. doi: 10.1016/j.envint.2021.106899.
+
 [3] “In Brief: Studying the Impact of the zinc oxide ban”. Veterinary Record 195 (1), p12, 6/13 July 2024; doi.org/10.1002/vetr.4446
+
 [4] EMA 2017, EMA-Zinc oxide-Annex II, EMEA: Amsterdam, The Netherlands
