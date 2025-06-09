@@ -18,12 +18,13 @@ All the scripts have been designed to work with a .csv file organised as follows
 - One row = one isolate/bacteria,
 
 And for each column:
-#Column 1 = Farm = ID of the farm from which the isolate comes from
-#Column 2 = Visit = sampling time point (V1, V2 or V4 in our case)
-#Column 3 = Group = pre-withdrawal or post-withdrawal (respectively, received or did not receive zinc oxide in our case)
-#Column 4 = Sample = ID of the sample (e.g. W01, W02, etc. in our case)
-#Column 5 = Agar = to distinguish isolates collected on Unselective or Selective agar
-#Column 6 = Pick = individual number of the isolate within each sample (e.g. P1, P2, etc in our case)
+-Columns 1 to 6 = isolate/bacteria identifier
+-- Column 1 = Farm = ID of the farm from which the isolate comes from
+- Column 2 = Visit = sampling time point (V1, V2 or V4 in our case)
+- Column 3 = Group = pre-withdrawal or post-withdrawal (respectively, received or did not receive zinc oxide in our case)
+- Column 4 = Sample = ID of the sample (e.g. W01, W02, etc. in our case)
+- Column 5 = Agar = to distinguish isolates collected on Unselective or Selective agar
+- Column 6 = Pick = individual number of the isolate within each sample (e.g. P1, P2, etc in our case)
 
 #Columns 7 to 20 = AST values (zone diameter in millimeters)
 #Antibiotics should be in the following order: Tetracycline, Ampicillin, Amoxicillin_Clavulanate,
