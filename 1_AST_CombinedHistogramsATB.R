@@ -17,7 +17,7 @@ library(tidyr)
 library(dplyr)
 library(tibble)
 
-#Creating a folder to save the graphs (if and only if a "Graphs" folder does not exist yet)
+#Creating a folder to save the graphs
 if (!dir.exists("Graphs")) {
   dir.create("Graphs")}
 
@@ -25,12 +25,12 @@ if (!dir.exists("Graphs")) {
 
 
 
-#This script has been designed to work with a file organised as follows:
+#This script has been designed to work with a .csv file organised as follows:
 #One row = one isolate/bacteria
 #Column 1 = Farm = ID of the farm from which the isolate comes from
 #Column 2 = Visit = sampling time point (V1, V2 or V4 in our case)
 #Column 3 = Group = pre-withdrawal or post-withdrawal (respectively, received or did not receive zinc oxide in our case)
-#Column 4 = Sample = ID of the sample (e.g. W01, W02, etc. in our case)
+#Column 4 = Sample = ID of the sample within each sampling time point (e.g. W01, W02, etc. in our case)
 #Column 5 = Agar = to distinguish isolates collected on Unselective or Selective agar
 #Column 6 = Pick = individual number of the isolate within each sample (e.g. P1, P2, etc in our case)
 
@@ -47,7 +47,7 @@ if (!dir.exists("Graphs")) {
 #Loading the Antimicrobial Susceptibility (AST) data
 AST_data <- read.csv("add_filename.csv",
                      header = TRUE,
-                     sep=",",
+                     sep = ",",
                      na.strings = "") #If empty values = analysis not done, then add NA
 
 
@@ -64,10 +64,11 @@ samples <- unique(AST_data_filtered$Sample)
 
 #Creating a table with, for each antibiotic, the threshold zone diameters defining resistant and susceptible isolates
 #Epidemiological breakpoint values according to EUCAST 2024 and VARSS 2024 (values listed in the order of the antibiotics aforementioned)
-#Diameters defining resistant (R) isolates
+#Diameters defining resistant isolates (resistant if <= list_R_diameter_adapted value)
 list_R_diameter <- c(11,13,18,11,16,10,17,10,18,16,17,16,16,21)
-#Diameters defining susceptible (S) isolates
+#Diameters defining susceptible isolates (susceptible if >= list_S_diameter_adapted value)
 list_S_diameter <- c(15,14,19,15,17,15,21,14,19,17,21,20,23,25)
+#If list_R_diameter != list_S_diameter - 1 = an "intermediary" category exists, i.e. isolate considered as susceptible, increased exposure
 table_RS_ATB <- data.frame(Antibiotic = antibiotics, R = list_R_diameter, S = list_S_diameter)
 
 
@@ -105,15 +106,16 @@ AST_data_long$Pick <- factor(AST_data_long$Pick,
 
 
 
-#Displaying the distributions of the picks = f(zone diameter)
+#Displaying the distributions of the picks = f(zone diameter in mm)
 
-#Slighlty changing table_RS_ATB as breakpoint values are defined as < or <=
-#Diameters defining resistant isolates (resistant if <= list_R_diameter_adapted value)
+#Slightly changing table_RS_ATB as breakpoint values for a nicer display on the graphs
+#Diameters defining resistant isolates 
 list_R_diameter_adapted <- c(11.5, 13.5, 18.5, 11.5, 16.5, 10.5, 17.5,
                              10.5, 18.5, 16.5, 17.5, 16.5, 16.5, 21.5)
-#Diameters defining susceptible isolates (resistant if >= list_S_diameter_adapted value)
+#Diameters defining susceptible isolates
 list_S_diameter_adapted <- c(14.5, 13.5, 18.5, 14.5, 16.5, 14.5, 20.5,
                              13.5, 18.5, 16.5, 20.5, 19.5, 22.5, 24.5)
+#Combining the lists
 table_RS_ATB_adapted <- data.frame(Antibiotic = antibiotics, R = list_R_diameter_adapted, S = list_S_diameter_adapted)
 
 
@@ -128,9 +130,9 @@ for (antibiotic in antibiotics) {
     group_by(Visit) %>%
     mutate(
       Nb_picks_visit = sum(Nb_picks),  # Total number of picks per visit
-      Proportion = Nb_picks / Nb_picks_visit,  # Proportion per zone diameter per visit
+      Proportion = Nb_picks / Nb_picks_visit,  # For each visit, proportion per zone diameter
       Percentage = Proportion * 100, # Corresponding percentage
-      # Calculating the confidence interval at 95% to display on the graphs
+      # Calculating the confidence interval at 95% (can be displayed on the graphs)
       Standard_error = sqrt((Proportion * (1 - Proportion)) / Nb_picks_visit),
       CI95 = 1.96 * Standard_error,
       ymin = (Proportion - CI95) * 100,
@@ -141,7 +143,7 @@ for (antibiotic in antibiotics) {
     ungroup()
   
   #Max value of the x axis = max of Zone_Diameter or S value of table_RS_ATB_adapted (if all picks susceptible)
-  #To avoid case when all picks are resistant, i.e. sensitive area not displayed
+  #To avoid cases when all picks are resistant, i.e. sensitive area not displayed
   max_x_limit <- max(max(proportion_data$Zone_diameter, na.rm = TRUE),
                      table_RS_ATB_adapted[table_RS_ATB_adapted$Antibiotic == antibiotic, "S"])
   
@@ -168,7 +170,7 @@ for (antibiotic in antibiotics) {
     scale_y_continuous(breaks = seq(0, 100, by = 5),
                        expand = c(0, 3)) +
 
-    #Rectangles to indicate the S and R zones
+    #Rectangles to indicate the Susceptible and Resistant zones/diameters
     geom_rect(aes(xmin = table_RS_ATB_adapted[table_RS_ATB_adapted$Antibiotic == antibiotic, "S"], xmax = Inf,
                   ymin = -Inf, ymax = Inf),
               fill = NA,
@@ -200,12 +202,10 @@ for (antibiotic in antibiotics) {
           axis.title.y = element_text(size = 18),
           axis.text.y = element_text(size = 16),
           axis.title.x = element_text(size = 18),
-          axis.text.x = element_text(size = 16),
-          #In order to not display the legend
-          legend.position = "none")
+          axis.text.x = element_text(size = 16))
 
-  #Creating filename and printing it (in case of error)
-  filename <- paste0("Graphs/", "RF-09_", antibiotic, "_histogram.png")
+  #Creating filename and printing it
+  filename <- paste0("Graphs/", antibiotic, "_histogram.png")
   print(paste("Saving:", filename))
 
   #Saving the file
